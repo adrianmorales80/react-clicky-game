@@ -61,8 +61,15 @@ export class App extends Component {
   }
 
   //randomize images when user clicks
-  randomizeImages = (id) => {
-    console.log(id);
+  randomizeImages = (data) => {
+    console.log(`Hello ${data.id}`);
+    //const totalItems = this.state.images.length;
+    this.setState({
+      images: [
+        ...this.state.images.sort(() => Math.random() - 0.5)
+      ]
+    })
+
   }
 
   render() {
