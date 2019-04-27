@@ -7,6 +7,10 @@ import stewieCart from './components/assets/stewie-cart.jpg';
 import stewieDance from './components/assets/stewie-dance.jpg';
 import stewieDiaper from './components/assets/stewie-diaper.jpg';
 import stewieDrink from './components/assets/stewie-drink.jpg';
+import stewieDriving from './components/assets/stewie-driving.jpg';
+import stewieEvil from './components/assets/stewie-evil.jpg';
+import stewieExcited from './components/assets/stewie-excited.jpg';
+import stewieLaser from './components/assets/stewie-laser.jpg';
 import './appNormalize.css';
 import './appSkeleton.css';
 
@@ -15,19 +19,43 @@ export class App extends Component {
     images: [
       {
         id: 1,
-        url: stewieCart
+        url: stewieCart,
+        alt: "stewie in cart"
       },
       {
         id: 2,
-        url: stewieDance
+        url: stewieDance,
+        alt: "stewie dancing"
       },
       {
         id: 3,
-        url: stewieDiaper
+        url: stewieDiaper,
+        alt: "stewie wearing diapers"
       },
       {
         id: 4,
-        url: stewieDrink
+        url: stewieDrink,
+        alt: "stewie in drinking alcohol"
+      },
+      {
+        id: 5,
+        url: stewieDriving,
+        alt: "stewie driving"
+      },
+      {
+        id: 6,
+        url: stewieExcited,
+        alt: "excited stewie"
+      },
+      {
+        id: 7,
+        url: stewieEvil,
+        alt: "evil stewie"
+      },
+      {
+        id: 8,
+        url: stewieLaser,
+        alt: "stewie with laser gun"
       }
     ]
   }
@@ -36,9 +64,11 @@ export class App extends Component {
     return (
       <div>
         <Navbar />
-        <Images 
-          images={this.state.images}
-        />
+        <div className="container">
+          <Images
+            images={this.state.images}
+          />
+        </div>
       </div>
     )
   }
