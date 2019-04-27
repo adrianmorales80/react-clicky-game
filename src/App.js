@@ -60,6 +60,11 @@ export class App extends Component {
     ]
   }
 
+  //randomize images when user clicks
+  randomizeImages = (id) => {
+    console.log(id);
+  }
+
   render() {
     return (
       <div>
@@ -67,6 +72,7 @@ export class App extends Component {
         <div className="container">
           <Images
             images={this.state.images}
+            randomizeImages={this.randomizeImages}
           />
         </div>
       </div>

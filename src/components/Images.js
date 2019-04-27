@@ -6,7 +6,13 @@ export class Images extends Component {
   render() {
     //console.log(this.props.images)
     return this.props.images.map((image) => (
-        <Image key={image.id} id={image.id} src={image.url} alt={image.alt}/>
+        <Image 
+          key={image.id} 
+          id={image.id} 
+          src={image.url} 
+          alt={image.alt}
+          randomizeImages={this.props.randomizeImages}
+        />
     ))
   }
 }
