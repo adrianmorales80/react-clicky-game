@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export class Images extends Component {
   render() {
-    //console.log(this.props.images)
+    //console.log(this.props)
     return this.props.images.map((image) => (
       <Image 
         key={image.id} 
@@ -18,7 +18,7 @@ export class Images extends Component {
 }
 
 Images.proptype = {
-    images: PropTypes.array.isRequired
+  images: PropTypes.array.isRequired
 }
 
 export default Images

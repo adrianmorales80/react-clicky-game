@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "url": "/assets/stewie-cart.jpg",
+    "alt": "stewie in cart"
+  },
+  {
+    "id": 2,
+    "url": "/assets/stewie-dance.jpg",
+    "alt": "stewie dancing"
+  },
+  {
+    "id": 3,
+    "url": "/assets/stewie-diaper.jpg",
+    "alt": "stewie wearing diapers"
+  },
+  {
+    "id": 4,
+    "url": "/assets/stewie-drink.jpg",
+    "alt": "stewie in drinking alcohol"
+  },
+  {
+    "id": 5,
+    "url": "/assets/stewie-driving.jpg",
+    "alt": "stewie driving"
+  },
+  {
+    "id": 6,
+    "url": "/assets/stewie-excited.jpg",
+    "alt": "excited stewie"
+  },
+  {
+    "id": 7,
+    "url": "/assets/stewie-evil.jpg",
+    "alt": "evil stewie"
+  },
+  {
+    "id": 8,
+    "url": "/assets/stewie-laser.jpg",
+    "alt": "stewie with laser gun"
+  }
+]
