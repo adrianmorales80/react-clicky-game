@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import Navbar from './components/layout/Navbar';
-import Images from './components/Images';
-//import Image from './components/Image';
-//import Footer from './components/layout/Footer';
-import stewieCart from './components/assets/stewie-cart.jpg';
-import stewieDance from './components/assets/stewie-dance.jpg';
-import stewieDiaper from './components/assets/stewie-diaper.jpg';
-import stewieDrink from './components/assets/stewie-drink.jpg';
-import stewieDriving from './components/assets/stewie-driving.jpg';
-import stewieEvil from './components/assets/stewie-evil.jpg';
-import stewieExcited from './components/assets/stewie-excited.jpg';
-import stewieLaser from './components/assets/stewie-laser.jpg';
-import './appNormalize.css';
-import './appSkeleton.css';
+//CSS
+import './App.css';
+import Navbar from './components/Navbar/index';
+import Images from './components/ImageCards/index';
+//import Footer from './components/Navbar/index';
+//Images
+import stewieCart from './components/Assets/stewie-cart.jpg';
+import stewieDance from './components/Assets/stewie-dance.jpg';
+import stewieDiaper from './components/Assets/stewie-diaper.jpg';
+import stewieDrink from './components/Assets/stewie-drink.jpg';
+import stewieDriving from './components/Assets/stewie-driving.jpg';
+import stewieEvil from './components/Assets/stewie-evil.jpg';
+import stewieExcited from './components/Assets/stewie-excited.jpg';
+import stewieLaser from './components/Assets/stewie-laser.jpg';
 
 export class App extends Component {
   state = {
@@ -59,7 +59,6 @@ export class App extends Component {
       }
     ]
   }
-
   //randomize images when user clicks
   randomizeImages = (data) => {
     console.log(`Hello ${data.id}`);
@@ -69,7 +68,6 @@ export class App extends Component {
         ...this.state.images.sort(() => Math.random() - 0.5)
       ]
     })
-
   }
 
   render() {
