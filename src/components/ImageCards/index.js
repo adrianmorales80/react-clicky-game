@@ -11,7 +11,7 @@ export class Images extends Component {
         id={image.id} 
         src={image.url} 
         alt={image.alt}
-        randomizeImages={this.props.randomizeImages}
+        playGame={this.props.playGame}
         />
     ))
   }

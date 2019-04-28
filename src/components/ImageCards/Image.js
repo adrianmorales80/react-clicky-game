@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 
 
 class Image extends Component {
-
   render() {
-    const {id, src, alt} = this.props
+    const {id, src, alt} = this.props;
     //console.log(this.props);
     //console.log(id, src, alt)
     return (
       <div className="u-pull-left" style={divStyle} data-id={`${id}`}>
         <img 
           src={`${src}`} 
-          alt={`${alt}`} 
-          onClick={this.props.randomizeImages.bind(this, this.props)} 
+          alt={`${alt}`}
+          onClick={this.props.playGame.bind(this, this.props)}
         />
       </div>
     );

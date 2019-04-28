@@ -8,12 +8,29 @@ import stewieImages from './stewieImages.json';
 
 export class App extends Component {
   state = {
-    stewieImages
+    stewieImages,
+    count: 0,
+    userGuesses: [],
+    score: 0,
+    topScore: 0
+  }
+
+  //game logic
+  playGame = (data) => {
+    console.log(data.id);
+    this.state.userGuesses.push(data.id);
+    this.setState({
+      count: this.state.count + 1,
+      //userGuesses: this.state.userGuesses.push(data.id),
+      score: this.state.score + 1,
+      topScore: this.state.topScore + 1
+    }, function () {
+      console.log(this.state);
+    })
   }
 
   //randomize images in state when user clicks
-  randomizeImages = (data) => {
-    console.log(`Hello ${data.id}`);
+  randomizeImages = () => {
     this.setState(
       this.state.stewieImages.sort(() => Math.random() - 0.5)
     )
@@ -22,11 +39,13 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          updateScore={this.updateScore}
+        />
           <Container>
           <Images
             images={this.state.stewieImages}
-            randomizeImages={this.randomizeImages}
+            playGame={this.playGame}
           />
           </Container>
       </div>
