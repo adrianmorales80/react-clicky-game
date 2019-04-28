@@ -3,15 +3,15 @@ import Image from './Image';
 import PropTypes from 'prop-types';
 
 export class Images extends Component {
+
   render() {
-    //console.log(this.props)
     return this.props.images.map((image) => (
       <Image 
         key={image.id} 
         id={image.id} 
         src={image.url} 
         alt={image.alt}
-        playGame={this.props.playGame}
+        gameLogic={this.props.gameLogic}
         />
     ))
   }

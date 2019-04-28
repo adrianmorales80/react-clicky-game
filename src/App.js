@@ -9,43 +9,61 @@ import stewieImages from './stewieImages.json';
 export class App extends Component {
   state = {
     stewieImages,
-    count: 0,
     userGuesses: [],
     score: 0,
-    topScore: 0
+    topScore: 0,
+    continuePlaying: true
   }
 
-  //game logic
-  playGame = (data) => {
-    console.log(data.id);
-    this.state.userGuesses.push(data.id);
-    this.setState({
-      count: this.state.count + 1,
-      //userGuesses: this.state.userGuesses.push(data.id),
-      score: this.state.score + 1,
-      topScore: this.state.topScore + 1
-    }, function () {
-      console.log(this.state);
-    })
+  //updates user guesses, score and top score
+  gameLogic = (data) => {
+    //save user guesses
+    let userGuesses = this.state.userGuesses;
+    userGuesses.push(data.id);
+    
+    //randomize images
+    this.state.stewieImages.sort(() => Math.random() - 0.5);
+    
+    //evaluate if user guess is incorrect by sorting, looping and updating boolean
+    userGuesses.sort((a,b )=> {return a-b})
+    for (let i = 0; i < this.state.userGuesses.length; i++) {
+      if (data.id === this.state.userGuesses[i] && data.id === this.state.userGuesses[i+1]) {
+        return this.setState({...this.state.continuePlaying, continuePlaying: false}, function () {
+          this.setState({...this.state.score, score: 0,
+            ...this.state.topScore, topscore: this.state.topScore,
+            ...this.state.userGuesses, userGuesses: [],
+            ...this.state.continuePlaying, continuePlaying: true
+          });
+          this.forceUpdate()
+        });
+      }
+    }
+    
+    //keep playing if the user is correct
+    if (this.state.continuePlaying) {
+      this.setState({
+        ...this.state.score, score: this.state.score + 1
+      })
+    } 
+    if (this.state.score > this.state.topScore) {
+      this.setState({...this.state.topScore, topscore: this.state.score})
+    }
   }
 
-  //randomize images in state when user clicks
-  randomizeImages = () => {
-    this.setState(
-      this.state.stewieImages.sort(() => Math.random() - 0.5)
-    )
-  }
+
 
   render() {
     return (
       <div>
         <Navbar
-          updateScore={this.updateScore}
+          score={this.state.score}
+          topScore={this.state.topScore}
         />
           <Container>
           <Images
             images={this.state.stewieImages}
-            playGame={this.playGame}
+            gameLogic={this.gameLogic}
+            handler = {this.handler}
           />
           </Container>
       </div>

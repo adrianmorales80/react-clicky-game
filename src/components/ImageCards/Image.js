@@ -12,7 +12,7 @@ class Image extends Component {
         <img 
           src={`${src}`} 
           alt={`${alt}`}
-          onClick={this.props.playGame.bind(this, this.props)}
+          onClick={this.props.gameLogic.bind(this, this.props)}
         />
       </div>
     );
