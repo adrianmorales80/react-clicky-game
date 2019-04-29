@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 export class Images extends Component {
 
   render() {
+
     return this.props.images.map((image) => (
       <Image 
         key={image.id} 

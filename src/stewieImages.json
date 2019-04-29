@@ -38,5 +38,25 @@
     "id": 8,
     "url": "/assets/stewie-laser.jpg",
     "alt": "stewie with laser gun"
+  },
+  {
+    "id": 9,
+    "url": "/assets/stewie-russian.jpg",
+    "alt": "stewie with russian attire"
+  },
+  {
+    "id": 10,
+    "url": "/assets/stewie-sleep.jpg",
+    "alt": "stewie sleeping"
+  },
+  {
+    "id": 11,
+    "url": "/assets/stewie-suit.jpg",
+    "alt": "stewie wears suit"
+  },
+  {
+    "id": 12,
+    "url": "/assets/stewie-swing.jpg",
+    "alt": "stewie swinging"
   }
 ]

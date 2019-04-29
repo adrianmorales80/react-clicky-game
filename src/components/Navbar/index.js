@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 export class Navbar extends Component {
 
   render() {
-    //const [score, topScore] = this.props;
-    //console.log(this.props)
     return (
       <nav>
         <ul>
@@ -13,7 +11,7 @@ export class Navbar extends Component {
           <li >
             <h4>
               <strong>
-                <span onChange = {this.props.handler}>Score: {this.props.score}</span><br/><span>TopScore: {this.props.topScore}</span>
+              <span>TopScore: {this.props.topScores[0]}</span><br/><span>Score: {this.props.score}</span>
               </strong>
             </h4>
           </li>
