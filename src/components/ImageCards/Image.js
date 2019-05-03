@@ -11,7 +11,7 @@ class Image extends Component {
 
         <div className="u-pull-left" style={divStyle} data-id={`${id}`}>
           <img 
-            src={`${src}`} 
+            src={`${process.env.PUBLIC_URL}${src}`} 
             alt={`${alt}`}
             onClick={this.props.gameLogic.bind(this, this.props)}
           />

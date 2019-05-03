@@ -10,7 +10,7 @@ export class Images extends Component {
       <Image 
         key={image.id} 
         id={image.id} 
-        src={image.url} 
+        src={`${process.env.PUBLIC_URL}${image.url}`} 
         alt={image.alt}
         gameLogic={this.props.gameLogic}
         />
